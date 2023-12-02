@@ -47,7 +47,9 @@ class QuestionActivity : AppCompatActivity() {
             val age = profile_age.text.toString().trim()
             val sistolik = profile_sistolik.text.toString().trim()
             val diastolik = profile_diastolik.text.toString().trim()
-            if (checkValidation(nama, age, genders, sistolik, diastolik)){
+            val bobot = profile_bobot.text.toString().trim()
+            val tinggi = profile_tinggi.text.toString().trim()
+            if (checkValidation(nama, age, genders, sistolik, diastolik, bobot, tinggi)){
                 saveData()
             }
         }
@@ -67,6 +69,8 @@ class QuestionActivity : AppCompatActivity() {
                     val jk = data?.get("jk")
                     val strDiastolik = data?.get("strDiastolik")
                     val strSistolik = data?.get("strSistolik")
+                    val strBobot = data?.get("strBobot")
+                    val strTinggi = data?.get("strTinggi")
                     val nama = data?.get("strName")
                     profile_names.text = Editable.Factory.getInstance().newEditable(nama.toString())
                     profile_age.text = Editable.Factory.getInstance().newEditable(age.toString())
@@ -74,6 +78,10 @@ class QuestionActivity : AppCompatActivity() {
                         Editable.Factory.getInstance().newEditable(strSistolik.toString())
                     profile_diastolik.text =
                         Editable.Factory.getInstance().newEditable(strDiastolik.toString())
+                    profile_bobot.text =
+                        Editable.Factory.getInstance().newEditable(strBobot.toString())
+                    profile_tinggi.text =
+                        Editable.Factory.getInstance().newEditable(strTinggi.toString())
                     when (jk) {
                         "Laki-laki" -> profile_gender.check(R.id.gender_male)
                         "Perempuan" -> profile_gender.check(R.id.gender_female)
@@ -87,7 +95,7 @@ class QuestionActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkValidation(nama: String, age: String, genders: String, sistolik: String, diastolik: String): Boolean {
+    private fun checkValidation(nama: String, age: String, genders: String, sistolik: String, diastolik: String, bobot: String, tinggi: String): Boolean {
         if (genders.isEmpty()){
             profile_gender.requestFocus()
         }else if (genders=="-"){
@@ -104,6 +112,12 @@ class QuestionActivity : AppCompatActivity() {
         }else if (diastolik.isEmpty()){
             profile_diastolik.error = "data diastolik tidak boleh kosong"
             profile_diastolik.requestFocus()
+        }else if (bobot.isEmpty()){
+            profile_bobot.error = "data bobot tidak boleh kosong"
+            profile_bobot.requestFocus()
+        }else if (tinggi.isEmpty()){
+            profile_tinggi.error = "data tinggi tidak boleh kosong"
+            profile_tinggi.requestFocus()
         }else{
             return true
         }
@@ -157,10 +171,12 @@ class QuestionActivity : AppCompatActivity() {
         val age = profile_age.text.toString()
         val sistolik = profile_sistolik.text.toString()
         val diastolik = profile_diastolik.text.toString()
+        val bobot = profile_bobot.text.toString()
+        val tinggi = profile_tinggi.text.toString()
         val jk = genders
         val grades = grade
 
-        val data = Data(id, name, sistolik.toInt(), age.toInt(), diastolik.toInt(), jk, grades)
+        val data = Data(id, name, sistolik.toInt(), age.toInt(), diastolik.toInt(), jk, grades, bobot.toInt(), tinggi.toInt())
         writeBatch.set(mUsersCollection.document(id), data)
         return writeBatch.commit()
     }

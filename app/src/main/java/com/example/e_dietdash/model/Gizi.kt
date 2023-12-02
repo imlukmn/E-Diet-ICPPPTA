@@ -1,5 +1,6 @@
 package com.example.e_dietdash.model
 
+import android.os.Parcel
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
@@ -11,4 +12,12 @@ data class Gizi(
     var serat: Int? = 0,
     var lemak: Int? = 0,
     var date: String? = "yyyy-mm-dd"
-): Parcelable
+): Parcelable {
+    override fun describeContents(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun writeToParcel(p0: Parcel?, p1: Int) {
+        TODO("Not yet implemented")
+    }
+}
