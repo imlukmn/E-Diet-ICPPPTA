@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+tools:context=".activity.BuahActivity"
+android:background="@color/white">
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/orange_300">
+
+        <ImageView
+            android:id="@+id/img_category"
+            android:src="@drawable/img_education"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/name_category"
+                    android:text="Buah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="48dp"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="32sp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="36dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="280dp"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="15dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:text="Pisang"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:textColor="@color/gray_800"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/view_pisang"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <EditText
+                                    android:id="@+id/input_pisang"
+                                    android:layout_width="80dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/custom_et"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:padding="12dp"
+                                    android:hint="0"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/gray_700"
+                                    android:textSize="16sp"
+                                    android:inputType="number"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/name_menu" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:padding="12dp"
+                                    android:text="gram/ml"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/gray_400"
+                                    android:textSize="12sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toEndOf="@+id/substance_menu"
+                                    app:layout_constraintTop_toTopOf="@+id/substance_menu" />
+                            </LinearLayout>
+                        </LinearLayout>
+                            <CheckBox
+                                android:id="@+id/check_pisang"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="36dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="24dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        app:cardElevation="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="280dp"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:paddingStart="15dp"
+                                android:paddingEnd="15dp"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:text="Anggur"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:textColor="@color/gray_800"
+                                    android:textSize="16sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:id="@+id/view_anggur"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:visibility="gone">
+
+                                    <EditText
+                                        android:id="@+id/input_anggur"
+                                        android:layout_width="80dp"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/custom_et"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:padding="12dp"
+                                        android:hint="0"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/gray_700"
+                                        android:textSize="16sp"
+                                        android:inputType="number"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/name_menu" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:padding="12dp"
+                                        android:text="gram/ml"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/gray_400"
+                                        android:textSize="12sp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintStart_toEndOf="@+id/substance_menu"
+                                        app:layout_constraintTop_toTopOf="@+id/substance_menu" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <CheckBox
+                                android:id="@+id/check_anggur"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="15dp"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <Button
+                    android:id="@+id/kirim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="Kirim"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/white"
+            android:layout_marginTop="-24dp"
+            app:cardElevation="-2dp">
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>
